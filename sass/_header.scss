@@ -1,0 +1,219 @@
+
+header{
+    position: fixed;
+    top:0;
+    left: 0;
+    right:0;
+    background:#333;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:2rem 9%;
+        
+    & .logo{
+        font-size: 2.5rem;
+        font-weight: bolder;
+        color:#fff;
+        text-transform: uppercase;
+
+        & span{
+            color:var(--orange);
+        }
+    }
+
+    & .navbar a{
+        color:#fff;
+        font-size: 2rem;
+        margin:0 .8rem;
+
+
+        &:hover{
+            color:var(--orange);
+        }
+
+    }
+    & .icons i{
+        font-size: 2.5rem;
+        color:#fff;
+        cursor: pointer;
+        margin-right: 2rem;
+
+
+        &:hover{
+            color:var(--orange);
+        }
+    }
+
+
+    & .search-bar-container{
+        position: absolute;
+        top:100%;
+        left: 0;
+        right:0;
+        padding:1.5rem 2rem;
+        background:#333;
+        border-top: .1rem solid rgba(255,255,255,.2);
+        display: flex;
+        align-items: center;
+        z-index: 1001;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+        & .active{
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+
+        & #search-bar{
+            width:100%;
+            padding:1rem;
+            text-transform: none;
+            color:#333;
+            font-size: 1.7rem;
+            border-radius: .5rem;
+        }
+
+        & label{
+            color:#fff;
+            cursor: pointer;
+            font-size: 3rem;
+            margin-left: 1.5rem;
+        }
+        & label:hover{
+            color:var(--orange);
+        }
+    }
+}
+
+
+/* LOGIN FORM */
+.login-form-container{
+    position: fixed;
+    top:-120%; left: 0;
+    z-index: 10000;
+    min-height: 100vh;
+    width:100%;
+    background:rgba(0,0,0,.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & .active{
+        top:0;
+    }
+
+    & form{
+        margin:2rem;
+        padding:1.5rem 2rem;
+        border-radius: .5rem;
+        background:#fff;
+        width:50rem;
+
+
+        & h3{
+            font-size: 3rem;
+            color:#444;
+            text-transform: uppercase;
+            text-align: center;
+            padding:1rem 0;
+        }
+        & .box{
+            width:100%;
+            padding:1rem;
+            font-size: 1.7rem;
+            color:#333;
+            margin:.6rem 0;
+            border:.1rem solid rgba(0,0,0,.3);
+            text-transform: none;
+        }
+        & .box:focus{
+            border-color: var(--orange);;
+        }
+        & #remember{
+            margin:2rem 0;
+        }
+        & label{
+            font-size: 1.5rem;
+        }
+        & .btn{
+            display: block;
+            width:100%;
+        }
+        & p{
+            padding:.5rem 0;
+            font-size: 1.5rem;
+            color:#666;
+        }
+
+        & p a{
+            color:var(--orange);
+        }
+
+        & p a:hover{
+            color:#333;
+            text-decoration: underline;
+        }
+    }
+    & #form-close{
+        position: absolute;
+        top:2rem; right:3rem;
+        font-size: 5rem;
+        color:#fff;
+        cursor: pointer;
+    }
+}
+
+
+#menu-bar{
+    color:#fff;
+    border:.1rem solid #fff;
+    border-radius: .5rem;
+    font-size: 3rem;
+    padding:.5rem 1.2rem;
+    cursor: pointer;
+    display: none;
+}
+
+
+
+
+
+@media (max-width:991px){
+
+    header{
+    padding:2rem;
+    }
+
+}
+
+@media (max-width:768px){
+
+    #menu-bar{
+    display: initial;
+    }
+
+    header .navbar{
+    position: absolute;
+    top:100%; 
+    right:0; 
+    left: 0;
+    background: #333;
+    border-top: .1rem solid rgba(255,255,255,.2);
+    padding:1rem 2rem;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    header .navbar.active{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    header .navbar a{
+    display: block;
+    border-radius: .5rem;
+    padding:1.5rem;
+    margin:1.5rem 0;    
+    background:#222;
+    }
+
+}
+
+
